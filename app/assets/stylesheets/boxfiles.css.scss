@@ -71,11 +71,8 @@ table { float:right;}
   font-shadow:1px 1px 1px #666;
 }
 
-.logo {margin-right:20px;}
-.smalllogo {
-  height:20px;
-  margin:50px 0 0 50px;
-}
+.logo {margin:0 30px 10px 20px;}
+.minilogo { margin:50px 0 0 50px;}
 
 .search {
   color:#999; 
@@ -91,4 +88,10 @@ table { float:right;}
 .search img {
   vertical-align:sub;
   height:12px;
+}
+
+th {
+  text-align:left;
+  padding-left:10px;
+  border-bottom:1px dotted #999;
 }
