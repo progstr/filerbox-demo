@@ -1,0 +1,43 @@
+<div class="firstrow">
+  demo@progstr.com
+  <a href="#"><img src='/assets/wrench.png' />Account</a>
+  <a href="#"><img src='/assets/star.png' />Settings</a>
+  <a href="#">Sign out</a>
+</div>
+
+<div class="secondrow">
+  <img class='logo' src='https://www.dropbox.com/static/22154/images/logo.png' />
+  <a href="#"><img src='/assets/cake.png' />Getting started</a>
+  <a href="#"><img src='/assets/star.png' />Files</a>
+  <a href="#"><img src='/assets/events.png' />Events</a>
+  <a href="#"><img src='/assets/group.png' />Sharing</a>
+  <a href="#"><img src='/assets/help.png' />Help</a>
+</div>
+<div class='leftcolumn'>
+  <div class='search'>
+    <img src='/assets/google_custom_search.png' />
+    Search your Filerbox
+  </div>
+</div>
+
+<div class='rightcolumn'>
+  <img src='https://www.dropbox.com/static/22154/images/logo.png' class='smalllogo' />
+  <div class="thirdrow">
+    <%= link_to 'Upload', new_boxfile_path, :class => 'working' %>
+    <a href="#"><img src='/assets/folder_add.png' />New folder</a>
+    <a href="#"><img src='/assets/folder_user.png' />Share a folder</a>
+    <a href="#"><img src='/assets/bin_closed.png' />Show deleted files</a>
+    <a href="#"><img src='/assets/star.png' />More</a>
+  </div>  
+  <table cellpadding='10px' cellspacing="10px">
+    <% @boxfiles.each do |b| %>
+      <tr>
+        <td> <%= image_tag(filetype_icon(@uploader.file_info(b.file).content_type))  %> </td>
+        <td> <%= link_to @uploader.file_info(b.file).name, b.file.url %></td>
+        <td> <%= @uploader.file_info(b.file).size %> </td>
+        <td> <%= @uploader.file_info(b.file).created_at %> </td> 
+        <td> <%= link_to 'delete', b, :method => :delete %> </td>
+      </tr>
+    <% end %>
+  </table>
+</div>

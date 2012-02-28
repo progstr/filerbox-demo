@@ -1,0 +1,94 @@
+// Place all the styles related to the Boxfiles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  padding:0 15%;
+  margin:0;
+  font-size:small;
+}
+
+a {
+  color:#1F75CC;
+}
+
+a img { 
+  vertical-align:sub;
+  margin-right:5px;
+}
+
+a.working {
+  font-weight:bold;
+  color:blue;
+}
+
+div.firstrow {text-align:right; margin-top:10px;width:100%; font-size:small;}
+
+div.firstrow a, div.secondrow a, .thirdrow a {
+  padding: 0px 15px;
+  text-decoration:none;
+}
+div.secondrow {
+  margin-top:20px;
+  padding-bottom:10px;
+  width:100%
+}
+div.secondrow a{
+  border:1px solid lightblue;
+  border-bottom: 0px; 
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background: aliceblue;
+  padding: 10px;
+}
+
+table { float:right;}
+
+.leftcolumn {
+  float:left;
+  height:600px; 
+  width:25%;
+  background:aliceblue;
+  border:1px solid lightblue;
+  border-top-left-radius:5px;
+}
+
+.rightcolumn {
+  float:left;
+  width:74%;  
+  border-top:1px solid lightblue;
+}
+
+.thirdrow {width:100%; margin: 20px 0; padding-left:50px;}
+
+.thirdrow a {
+  border:1px solid lightblue;
+  padding:5px;
+  border-radius:3px;
+}
+
+.title {
+  font-size:xx-large;
+  font-shadow:1px 1px 1px #666;
+}
+
+.logo {margin-right:20px;}
+.smalllogo {
+  height:20px;
+  margin:50px 0 0 50px;
+}
+
+.search {
+  color:#999; 
+  font-size:0.8em;
+  border: 1px solid lightblue;
+  background:white;
+  margin: 30px auto;
+  width:80%;
+  padding:5px;
+  border-radius:2px;
+}
+
+.search img {
+  vertical-align:sub;
+  height:12px;
+}
