@@ -40,7 +40,7 @@
         <td> <%= if defined?(@uploader.file_info(b.file).content_type) && !(@uploader.file_info(b.file).content_type.nil?) then image_tag(filetype_icon(@uploader.file_info(b.file).content_type)) else image_tag('star.png') end  %> </td>
         <td> <%= link_to @uploader.file_info(b.file).name, b.file.url %></td>
         <td> <%= @uploader.file_info(b.file).size %> </td>
-        <td> <%= @uploader.file_info(b.file).created_at %> </td> 
+        <td> <%= Time.at(@uploader.file_info(b.file).created_at/1000) %> </td> 
         <td> <%= link_to 'delete', b, :method => :delete %> </td>
       </tr>
     <% end %>
