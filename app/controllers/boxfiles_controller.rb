@@ -2,6 +2,7 @@ class BoxfilesController < ApplicationController
   def index
     @boxfiles = Boxfile.all
     @uploader = FileUploader.new
+    @boxfile = Boxfile.new
   end
 
   def new

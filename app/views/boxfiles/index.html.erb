@@ -1,3 +1,5 @@
+<%= render :partial => 'new' %>
+
 <div class="firstrow">
   demo@progstr.com
   <a href="#"><img src='/assets/wrench.png' />Account</a>
@@ -23,10 +25,10 @@
 <div class='rightcolumn'>
   <img src='/assets/minilogo.png' class='minilogo' />
   <div class="thirdrow">
-    <%= link_to new_boxfile_path, :class => 'working' do %>
+    <a href='#' id='upload_link' class='working'>
       <img src='/assets/add.png' /> 
       <span>Upload</span>
-    <% end %>
+    </a>
     <a href="#"><img src='/assets/folder_add.png' />New folder</a>
     <a href="#"><img src='/assets/folder_user.png' />Share a folder</a>
     <a href="#"><img src='/assets/bin_closed.png' />Show deleted files</a>
