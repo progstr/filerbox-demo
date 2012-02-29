@@ -23,7 +23,10 @@
 <div class='rightcolumn'>
   <img src='/assets/minilogo.png' class='minilogo' />
   <div class="thirdrow">
-    <%= link_to 'Upload', new_boxfile_path, :class => 'working' %>
+    <%= link_to new_boxfile_path, :class => 'working' do %>
+      <img src='/assets/add.png' /> 
+      <span>Upload</span>
+    <% end %>
     <a href="#"><img src='/assets/folder_add.png' />New folder</a>
     <a href="#"><img src='/assets/folder_user.png' />Share a folder</a>
     <a href="#"><img src='/assets/bin_closed.png' />Show deleted files</a>
@@ -39,8 +42,8 @@
       <tr>
         <td> <%= if defined?(@uploader.file_info(b.file).content_type) && !(@uploader.file_info(b.file).content_type.nil?) then image_tag(filetype_icon(@uploader.file_info(b.file).content_type)) else image_tag('star.png') end  %> </td>
         <td> <%= link_to @uploader.file_info(b.file).name, b.file.url %></td>
-        <td> <%= @uploader.file_info(b.file).size %> </td>
-        <td> <%= Time.at(@uploader.file_info(b.file).created_at/1000) %> </td> 
+        <td> <%= file_size(@uploader.file_info(b.file).size) %> </td>
+        <td> <%= Time.at(@uploader.file_info(b.file).created_at/1000).localtime.strftime("%Y-%m-%d %H:%M:%S") %> </td> 
         <td> <%= link_to 'delete', b, :method => :delete %> </td>
       </tr>
     <% end %>

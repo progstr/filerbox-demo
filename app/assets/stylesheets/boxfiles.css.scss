@@ -18,7 +18,18 @@ a img {
 
 a.working {
   font-weight:bold;
-  color:blue;
+  padding:5px 10px !important;
+  font-size:1.2em !important;
+  display:inline-block !important;
+  vertical-align:baseline !important;
+}
+
+a.working img {
+  vertical-align:text-bottom;
+}
+
+a.working span {
+  vertical-align:super !important;
 }
 
 div.firstrow {text-align:right; margin-top:10px;width:100%; font-size:small;}
