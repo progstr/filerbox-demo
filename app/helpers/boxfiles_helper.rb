@@ -184,16 +184,20 @@ module BoxfilesHelper
       'application/vnd.ms-excel.addin.macroEnabled.12' => 'xls',
       'application/vnd.ms-excel.sheet.binary.macroEnabled.12' => 'xls'
     }
-    if defined?(icons[filetype]) then  return 'file_extension_'+icons[filetype]+'.png' end
+    if !(icons[filetype].nil?) 
+      return 'file_extension_'+icons[filetype]+'.png'
+    else
+      return 'star.png'
+    end
   end
 
   def file_size(size)
     size = size.to_f
     filesize = case size
-               when 1000000000..1000000000000000 then (size/1000000000).round(2).to_s+" GB"
-               when 1000000..1000000000 then (size/1000000).round(2).to_s+" MB"
-               when 1000..1000000 then (size/1000).round(2).to_s+' KB'
-               when 0..1000 then size.to_s+' B'
+               when (1024 * 1024 * 1024)..(1024 * 1024 * 1024 * 1024) then (size/(1024 * 1024 * 1024)).round(2).to_s+" GB"
+               when (1024 *1024)..(1024 * 1024 * 1024) then (size/(1024 * 1024)).round(2).to_s+" MB"
+               when 1024..(1024 * 1024) then (size/1024).round(2).to_s+' KB'
+               when 0..1024 then size.to_s+' B'
                end
     return filesize
   end
