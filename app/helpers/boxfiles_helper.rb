@@ -136,7 +136,7 @@ module BoxfilesHelper
       'application/x-wais-source' => 'src',
       'application/x-sv4cpio' => 'sv4cpio',
       'application/x-sv4crc' => 'sv4crc',
-      'image/svg+xml' => 'svg',
+      'image/svg+xml' => 'png',
       'application/x-shockwave-flash' => 'swf',
       'application/x-troff' => 't',
       'application/x-tar' => 'tar',
