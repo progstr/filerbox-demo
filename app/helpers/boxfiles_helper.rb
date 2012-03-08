@@ -1,4 +1,19 @@
 module BoxfilesHelper
+  def with_infos(uploader, boxfiles)
+    boxfiles.each do |boxfile|
+      begin
+        info = get_info(uploader, boxfile.file)
+        yield(boxfile, info)
+      rescue ApiError => e
+        Rails.logger.info("Get file info failed. " + e.to_s)
+      end
+    end
+  end
+
+  def get_info(uploader, file)
+    uploader.file_info(file) 
+  end
+
   def filetype_icon(filetype)
     icons = Hash.new
     icons = {

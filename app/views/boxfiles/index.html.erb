@@ -40,13 +40,13 @@
       <th>Size</th>
       <th colspan=2>Uploaded</th>
     </tr>
-    <% @boxfiles.each do |b| %>
+    <% with_infos(@uploader, @boxfiles) do |boxfile, info| %>
       <tr>
-        <td> <%= if defined?(@uploader.file_info(b.file).content_type) && !(@uploader.file_info(b.file).content_type.nil?) then image_tag(filetype_icon(@uploader.file_info(b.file).content_type)) else image_tag('star.png') end  %> </td>
-        <td> <%= link_to @uploader.file_info(b.file).name, b.file.url %></td>
-        <td> <%= file_size(@uploader.file_info(b.file).size) %> </td>
-        <td> <%= Time.at(@uploader.file_info(b.file).created_at/1000).localtime.strftime("%Y-%m-%d %H:%M:%S") %> </td> 
-        <td> <%= link_to 'delete', b, :method => :delete %> </td>
+        <td> <%= if defined?(info.content_type) && !(info.content_type.nil?) then image_tag(filetype_icon(info.content_type)) else image_tag('star.png') end  %> </td>
+        <td> <%= link_to info.name, boxfile.file.url %></td>
+        <td> <%= file_size(info.size) %> </td>
+        <td> <%= Time.at(info.created_at/1000).localtime.strftime("%Y-%m-%d %H:%M:%S") %> </td> 
+        <td> <%= link_to 'delete', boxfile, :method => :delete %> </td>
       </tr>
     <% end %>
   </table>
