@@ -14,7 +14,7 @@ class BoxfilesController < ApplicationController
     if @boxfile.save
       redirect_to :root, :notice => "File successfully uploaded"
     else
-      render 'new'
+      redirect_to :root, :notice => "Upload failed."
     end
   end
 
