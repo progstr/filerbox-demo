@@ -5,7 +5,7 @@ module BoxfilesHelper
         info = get_info(uploader, boxfile.file)
         yield(boxfile, info)
       rescue ApiError => e
-        Rails.logger.info("Get file info failed. " + e.to_s)
+        Rails.logger.info("Get file info failed. " + e.message)
       end
     end
   end
