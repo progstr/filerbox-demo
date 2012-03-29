@@ -46,9 +46,9 @@
     </tr>
     <% with_infos(@uploader, @boxfiles) do |boxfile, info| %>
       <tr>
-        <td> <%= if defined?(info.content_type) && !(info.content_type.nil?) then image_tag(filetype_icon(info.content_type)) else image_tag('star.png') end  %> </td>
+        <td> <%= image_tag filetype_icon(info.content_type) %> </td>
         <td> <%= link_to info.name, boxfile.file.url %></td>
-        <td> <%= file_size(info.size) %> </td>
+        <td> <%= file_size info.size %> </td>
         <td> <%= Time.at(info.created_at/1000).localtime.strftime("%Y-%m-%d %H:%M:%S") %> </td> 
         <td> <%= link_to 'delete', boxfile, :method => :delete %> </td>
       </tr>
