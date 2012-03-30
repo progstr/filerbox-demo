@@ -1,4 +1,4 @@
-desc "Called by Heroku scheduler add-on"
+desc "Mass upload all files in the public/to-upload folder to Progstr Filer"
 task :mass_upload => :environment do
   files = Dir.glob(File.join(Rails.public_path, "to-upload") + "/**")
   files.each do |file|
