@@ -16,6 +16,9 @@ We define a single `BoxfilesController` class that handles file uploads. It does
 ## Views
 The most important view is the `boxfiles/index.html.erb` one it loops over all the files and renders the file list. To do that it uses the `with_infos` view helper which takes a block that takes a `Boxfile` and a file info object and executes it for every file.
 
+## Migrating Existing Files
+Many applicaitons already have a bunch of existing files lying around on the filesystem that need to be uploaded to Progstr Filer. The easiest way to do that is with a custom Rake task. The `lib/tasks/mass_upload.rake` sample task demonstrates how to get all files in a given folder, associate them with a model, and upload them to Progstr Filer.
+
 # Improvement Ideas
 
 Being a sample application, Filerbox isn't a complete solution. Here are some parts that may need more work in a real production deployment:
