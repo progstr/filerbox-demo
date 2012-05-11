@@ -15,8 +15,9 @@
 </script>
 
 <div id="dialog-modal" title="Upload file">
-  <%= form_for @boxfile do |b| %>
-    <%= b.file_field :file %>
-    <%= b.submit 'Upload file'%>
+  <%= form_for @boxfile do |f| %>
+    <!-- direct upload field -->
+    <%= f.filer_upload_field :file %>
+    <%= f.submit 'Upload file'%>
   <% end %>
 </div>
