@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.0'
 
-gem 'progstr-filer', :require => 'progstr-filer', :path => '~/w/progstr/filer-gem/'
+gem 'progstr-filer', :require => 'progstr-filer'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
