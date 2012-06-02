@@ -1,3 +1,5 @@
+# A PROOF-OF-CONCEPT BACKPORT TO RAILS 3.0. BROKEN UI - DO NOT USE UNLESS INSTRUCTED BY SUPPORT PERSONNEL
+
 # Progstr Filer - Filerbox demo application
 
 [Progstr Filer](http://filer.progstr.com) is a developer-friendly file hosting platform built specifically for web apps. It lets you easily associate file attachments with your ActiveRecord models and removes the hassle of actually hosting the files yourself.
