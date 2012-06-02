@@ -15,7 +15,7 @@
 </script>
 
 <div id="dialog-modal" title="Upload file">
-  <%= form_for @boxfile do |b| %>
+  <%= form_for(@boxfile, :html => {:multipart => true}) do |b| %>
     <%= b.file_field :file %>
     <%= b.submit 'Upload file'%>
   <% end %>
